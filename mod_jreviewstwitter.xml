@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension	 type="module" version="2.5" client="site">
+	<name>Jreviews Twitter</name>
+	<creationDate>March 2014</creationDate>
+	<author>OpenSource Technologies</author>
+	<authorEmail>sales@opensourcetechnologies.com</authorEmail>
+	<authorUrl>http://www.opensourcetechnologies.com</authorUrl>
+	<copyright>Copyright (C) 2009 - 2016 OpenSource Technologies. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license> 
+	<version>2.5.1</version>
+	<description>A module that makes it easy to display the tweets as per your listing page </description>
+	<files>
+		<filename module="mod_jreviewstwitter">mod_jreviewstwitter.php</filename>
+		<filename module="mod_jreviewstwitter">TwitterAPIExchange.php</filename>
+	</files>
+
+	<config>
+		<fields name="params">			
+			<fieldset name="basic">	
+			<field type="spacer" name="&lt;div style=&quot;background-color:#E9EFFF; padding: 5px; text-align:center; color: black; font-weight:bold;&quot;&gt;Authentication settings &lt;/div&gt;" />
+				<field name="consumer_key" type="text" default="" label="Consumer key" description="Consumer key for your app at https://dev.twitter.com/apps/new" />
+				<field name="consumer_secret" type="text" default="" label="Consumer secret" description="Consumer secret for your app at https://dev.twitter.com/apps/new" />
+				<field name="access_token" type="text" default="" label="Access token" description="Access token for your app at https://dev.twitter.com/apps/new" />
+				<field name="access_secret" type="text" default="" label="Access token secret" description="Access token secret for your app at https://dev.twitter.com/apps/new" />
+				<field type="spacer" name="&lt;div style=&quot;background-color: #E9EFFF; padding: 5px; text-align:center; color: black; font-weight:bold;&quot;&gt;Widget settings&lt;/div&gt;" />
+									
+				<field name="fieldname" type="text" default="" label="JReviews Field Name" description="It need to be field name, not the Title" />
+				<field
+					name="username"
+					type="text"
+					default=""
+					label="Twitter Username"
+					description="Your Twitter username not Email Id"
+				/>
+				<field
+					name="tweetnumber"
+					type="text"
+					default="20"
+					label="Number of tweets"
+					description="The number of tweets you would like displayed - the maximum is 20"
+				/>
+				
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="30"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>	
+		</fields>
+	</config>
+</extension>
